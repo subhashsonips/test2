@@ -1,0 +1,42 @@
+machine:
+    php:
+        version: 5.6.22
+    hosts:
+        localhost: 127.0.0.1
+        job.v2.com: 127.0.0.1
+
+database:
+  override:
+    #- mysql -u ubuntu  circle_test < my-database-setup.sql
+ 
+dependencies:
+  pre:
+    - sudo unlink /usr/lib/apache2/modules/libphp5.so
+    - sudo ln -s $PHPENV_ROOT/versions/$(phpenv global)/usr/lib/apache2/modules/libphp5.so /usr/lib/apache2/modules/libphp5.so
+    - echo "TEST_BASE_URL=http://dev.promarkup.co/test2/public" >> .env
+    - echo "DB_CONNECTION=testing_db" >> .env
+    - echo "TEST_DB_HOST=127.0.0.1" >> .env
+    - echo "TEST_DB_DATABASE=circle_test" >> .env
+    - echo "TEST_DB_USERNAME=ubuntu" >> .env
+    - echo "TEST_DB_PASSWORD=" >> .env
+    - echo "APP_KEY" >> base64:Yy7slhB2AKNJGbpHOY1aIuMqOoWRWE9QnGryFZPFf0I=
+    - sudo cp ~/timesheet/job.v2.com.conf /etc/apache2/sites-available
+    - sudo a2ensite job.v2.com.conf
+    - sudo service apache2 restart
+    - curl -LO https://deployer.org/deployer.phar
+    - sudo mv deployer.phar /usr/local/bin/dep
+    - chmod +x /usr/local/bin/dep
+    - sudo chmod 777 storage/ -R
+
+  override:
+    - composer install --no-interaction
+    
+test:
+  override:
+    - echo "test";
+    
+deployment:
+  staging:
+    branch: master
+    commands:
+      - dep deploy:staging
