@@ -3,9 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\User;
-use App\Http\Requests;
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
 
 class AdminMiddleware
@@ -17,13 +15,12 @@ class AdminMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-      public function handle($request, Closure $next)
-      {
-         if(Auth::user()->status==0)
-          {
-            return redirect('/logout');
-          }
-          return $next($request);
-      }
-    
+    public function handle($request, Closure $next)
+    {
+        if (Auth::user()->role=='team') {
+            return redirect('/work/team-work');
+        }
+
+        return $next($request);
+    }
 }

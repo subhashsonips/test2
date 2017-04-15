@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
 use App\User;
-use Illuminate\Support\Facades\Auth;
 use Validator;
-use Mail;
 use App\Http\Controllers\Controller;
-//use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -27,11 +23,11 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
-     * Where to redirect users after registration.
+     * Where to redirect users after login / registration.
      *
      * @var string
      */
-    protected $redirectTo = '/test';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -40,10 +36,9 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-       $this->middleware('guest');
+        $this->middleware('guest');
     }
-    
-     
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -53,8 +48,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6',
+            'password' => 'required|min:6|confirmed',
         ]);
     }
 
@@ -64,28 +60,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return User
      */
-    public function create(array $data)
+    protected function create(array $data)
     {
-        //echo $data['password']; die();
-        //die();
-        //print_r($data);
-        //die();
-        $users=User::create([
+        return User::create([
+            'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'duplicate_pass'=>$data['password'],
         ]);
-
-        
-           /*Mail::send('emails.welcome', $data, function($message) use ($data)
-            {
-                $message->from('manjinder.imenso@gmail.com', "OCTB");
-                $message->subject("Welcome to Impactify");
-                $message->to($data['email']);
-            });*/
-           
-           //header('location:');
-      return ($users);
-
     }
 }

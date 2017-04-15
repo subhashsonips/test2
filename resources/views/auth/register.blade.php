@@ -1,79 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>registeration from</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{{ url('/css/style.css') }}">	  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+@extends('layouts.app')
 
-</head>
-<body>
-<section id="login" class="">
-		<div class="container-fluid form_hero">
-			<div class="row">
-				<div class="col-lg-6 col-lg-offset-3">
-					<div class="custm_form">
-						<div class="custm_form_inner">
-							<div class="form_header text-center">
-								<div class="form_logo_wrp"><img src="images/octb_logo2.png" alt="logo"></div>
-								<p class="text-uppercase">sign up</p>
-							</div>
-							<form  method="POST" id="register-form" action="{{ url('/register') }}">
-							    @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        {{ $errors->first('email') }}
-                                    </span>
-                                    @endif 
-								<div class="form-group">
-									<input class="form-control" id="" placeholder="choose your email " required name="email" value="" required="" aria-required="true" type="email">
-								</div>
-								 @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        {{ $errors->first('password') }}
-                                    </span>
-                                    @endif
-								<div class="form-group">
-									<input class="form-control" id="inputPassword" placeholder="choose your password" required name="password" required="" aria-required="true" type="password">
-								</div>
-								
-								<!--<p class="text-right"><a href="">Forgot password?</a></p>
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Register</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                        {{ csrf_field() }}
 
-								<div class="checkbox">
-									<label>
-										<input value="" type="checkbox">
-										<span class="cr"><i class="cr-icon fa fa-check"></i></span>
-										Remember me
-									</label>
-								</div>-->
-								<div class="text-center">
-									<button href="" type="submit" class="">register</button>
-								</div>
-							</form>
-						</div>	
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<div class="container cookie_wrp" style="display:none">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="cookie_inner">
-					<p class="marg_0">This website uses cookies to enhance your experience. By logging in, you fully consent to Overcome The Barrier, Inc storing a cookie on your device to identify you uniquely as you navigate our website.</p>
-				<button class="btn">OK</button>
-				</div>
-			</div>
-		</div>
-	</div>	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
-<script type="text/javascript" src="{{ url('/js/jquery.validate.js') }}"></script> 
-<script type="text/javascript">
-	$(document).ready(function(){
-  $("#register-form").validate();
-});
-</script>
-</body>
-</html>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Name</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
