@@ -6,7 +6,7 @@ require 'recipe/laravel.php';
 
 // Configuration
 
-set('repository', 'git@github.com:subhashsonips/test2.git');
+set('repository', 'git@bitbucket.org:sapna_laccheta/job_tinder.git');
 
 add('shared_files', [
     'logs',

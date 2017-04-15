@@ -20,7 +20,7 @@ dependencies:
     - echo "TEST_DB_USERNAME=ubuntu" >> .env
     - echo "TEST_DB_PASSWORD=" >> .env
     - echo "APP_KEY" >> base64:Yy7slhB2AKNJGbpHOY1aIuMqOoWRWE9QnGryFZPFf0I=
-    - sudo cp ~/timesheet/job.v2.com.conf /etc/apache2/sites-available
+    - sudo cp ~/test2/job.v2.com.conf /etc/apache2/sites-available
     - sudo a2ensite job.v2.com.conf
     - sudo service apache2 restart
     - curl -LO https://deployer.org/deployer.phar

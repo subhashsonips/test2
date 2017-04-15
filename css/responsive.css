@@ -1,0 +1,16 @@
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 90% !important;
+  }
+}
+/* Mobile Phone Resolution  CSS rules for browser widths equal to or less than 480px */
+@media only screen and (max-width: 480px) {
+ .container-fluid {
+ 	width: 100%
+ }
+
+}
+/* Tablet Resolution CSS rules for browser widths from 481px to 768 px*/
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+}

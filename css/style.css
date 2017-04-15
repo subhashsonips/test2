@@ -1,0 +1,700 @@
+/*
+Author - Pixel Speaks
+font-family: 'Raleway', sans-serif;
+theme-color : #FF6600;
+*/
+
+/*-------------------Typography------------------------------------------Typography------------------------------------------------------------------------------*/
+@font-face {
+    font-family: myGotham;
+    src: url('font/Gotham Book.ttf');
+}
+body {
+  background-color: #EFF5F5;
+  font-family: myGotham;
+  font-size: 1.4em;
+  line-height: 1.7em;
+
+}
+a:focus {
+	outline: none;
+	text-decoration: none;
+	color: #3A97E0;
+}
+a:hover {
+	text-decoration: none;
+}
+h4 {
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+h3 {
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 30px;
+	margin-top: 40px;
+}
+label {
+	font-weight: normal;
+	font-size: 11px;
+}
+.burger {
+	padding: 20px 0;
+}
+.navbar {
+  border: none;
+  margin-bottom: 0;
+  height: 40px;
+
+}
+.navbar-default {
+  background-color: #FFF;
+  border-radius: 0;
+
+}
+.navbar-brand {
+  font-weight: 900;
+  color: #0078D7!important;
+  width: 135px;
+  text-align: center;
+  height: 49px;
+  line-height: 2em;
+  padding: 7px;
+  text-transform: uppercase;
+
+}
+.navbar-nav > li > a {
+  font-size: 0.85em;
+  font-weight: 600;
+  margin: 0 24px;
+  padding: 7px 0;
+}
+.navbar-nav > li > a:hover {
+  border-bottom: 1px solid #000;
+}
+.top-icons {
+  width: 200px;
+  margin-left: 10px;
+}
+a {
+  color: #3A97E0;
+}
+.top-icons a {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 13px 0 !important;
+    width: 25% !important;
+    text-align: center;
+}
+.logo-text {
+  color: #000;
+  display: block;
+  font-size: 1em !important;
+  font-weight: 600 !important;
+  left: 59px;
+  padding: 13px;
+  position: absolute;
+}
+.logo-text:hover {
+  color: #000;
+}
+small {
+  font-weight: 600;
+}
+.logo-text strong {
+  font-weight: 900;
+}
+.display-table {
+  display: table;
+}
+.display-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+.lhs {
+  width: 65%;
+  background-color: #f5f5f5;
+}
+.rhs {
+  width: 35%;
+  background-color: #2D5A89;
+}
+.full-width {
+  width: 100%;
+}
+.account-wall {
+  width: 60%;
+  margin: 0 auto;
+}
+.wht-text {
+  color: #FFF;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #FFF;
+}
+#menu ul li {
+  display: inline-block;
+  list-style: none;
+  padding:8px 15px;
+}
+#menu ul li:hover {
+  background-color:transparent;
+
+}
+#menu ul li a {
+    color: #000;
+    display: inline-block;
+    line-height: 17px;
+    padding: 8px 0;
+  
+}
+.aleft {
+  float: left;
+}
+.aright {
+  float: right;
+}
+.inpt {
+  
+    background-color: #FFF;
+	border:1px solid #DDD;
+    color: #555;
+    display: block;   
+    font-size: 14px;
+    height: 40px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+.sidebar-search .inpt {
+	 background-color: #E4EDED;
+	 border:none;
+}
+.search {
+	background-image: url('images/search.png');
+	background-repeat: no-repeat;
+	background-position: 346px center;
+	background-size: 4%;
+}
+.sidebar-header {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+.sidebar-nav {
+	margin-top: 20px;
+}
+.sidebar-nav ul {
+	padding-left: 0;
+}
+.sidebar-nav li {
+	list-style: none;
+
+}
+.sidebar-nav li a {
+	color: #000;
+
+}
+.content-wrapper {
+	padding: 20px;
+	background-color: #FFF;
+	min-height: 500px;
+}
+.new {
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 64%;
+    background: #fff none repeat scroll 0 0;
+    z-index: 99;
+}
+.new-wrapper {
+	display: block;
+	max-height: 550px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+
+
+.btn-dark {
+    background: #0078d7 none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    outline: 0 solid #2d5a89;
+    padding: 9px 38px;
+    transition: background 0.2s ease 0s, outline 0.5s ease 0s;
+    border:none;
+    text-transform: uppercase;
+}
+.btn-red {
+    background: #EF4F69 none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    outline: 0 solid #2d5a89;
+    padding: 9px 38px;
+    transition: background 0.2s ease 0s, outline 0.5s ease 0s;
+    border:none;
+    text-transform: uppercase;
+}
+.btn-light {
+    background: #EFF5F5 none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #666;
+    font-size: 12px;
+    font-weight: bold;
+    outline: 0 solid #2d5a89;
+    padding: 9px 38px;
+    transition: background 0.2s ease 0s, outline 0.5s ease 0s;
+    border:none;
+    text-transform: uppercase;
+}
+.btn-sm {
+	background: #EEE none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #666;
+    font-size: 14px;
+    outline: 0 solid #2d5a89;
+    padding: 9px 18px;
+    transition: background 0.2s ease 0s, outline 0.5s ease 0s;
+    border:none;
+}
+.tmarg {
+	margin-top: 50px;
+}
+.p-title {
+	font-size: 20px;
+}
+.dots {
+	 cursor: pointer;
+    letter-spacing: -2px;
+    position: absolute;
+    right: 39px;
+    top: 10px;
+}
+.sml {
+	font-size: 11px;
+}
+.big {
+	font-size: 24px;
+}
+.content-add {
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    padding: 20px 0;
+}
+.table > thead > tr > th {
+	color: #777;
+}
+.task-row {
+	margin-bottom: 10px;
+}
+
+.circle {
+	height: 20px;
+	width: 20px;
+	border-radius: 100%;
+	display: block;
+}
+.greybg {
+	background-color: #DDD;
+}
+.greenbg {
+	background-color: #22EE5B;
+}
+.orangebg {
+	background-color: #f80;
+}
+.green-text {
+	color: green;
+}
+.orange-text {
+	color: #f80;
+}
+.CheckBoxChecked, .CheckBoxChecked:hover {
+    background: rgba(0, 0, 0, 0) url("images/tick.png") no-repeat scroll center center / 60% auto;
+}
+.CheckBox {
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    float: left;
+    height: 23px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    width: 23px;
+}
+.CheckBox:hover, .CheckBox:focus {
+	border:2px solid #5A87AE;
+}
+.progress {
+  width: 100%;
+  height: 5px;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.progress-wrap {
+  background: #22EE5B;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+.progress-wrap .progress-bar {
+  background: #EEE;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.blackLink {
+	color: #000;
+}
+.modal-content {
+	border-radius: 0;
+}
+.modal-dialog {
+	width: 450px;
+}
+.media {
+	border-bottom: 1px solid #EEE;
+	padding-bottom: 10px;
+}
+.media:last-child {
+	border-bottom: none;
+}
+ .media-object {
+	border-radius: 100%;
+	background-color: #EFF5F5;
+	padding: 3px;
+}
+.actions {
+	position: absolute;
+	top: 7px;
+	right: -18px;
+	width: 100px;
+}
+.dropdown-dot {
+    position: relative;
+
+    /** Make it fit tightly around it's children */
+    display: inline-block;
+}
+
+.dropdown-dot .dropdown-menu {
+    position: absolute;
+
+    /**
+     * Set the top of the dropdown menu to be positioned 100%
+     * from the top of the container, and aligned to the left.
+     */
+    top: 100%;
+    left: -93px;
+
+    /** Allow no empty space between this and .dropdown */
+    margin: 0;
+}
+.dropdown-dot:hover .dropdown-menu {
+
+    /** Show dropdown menu */
+    display: block;
+}
+.dropdown-dot {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-dot .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    display: none;
+    margin: 0;
+    border:none;
+
+    /****************
+     ** NEW STYLES **
+     ****************/
+
+    list-style: none; /** Remove list bullets */
+    width: 100%; /** Set the width to 100% of it's parent */
+    padding: 0;
+}
+
+.dropdown-dot:hover .dropdown-menu {
+    display: block;
+}
+
+/** Button Styles **/
+.dropdown-dot button {
+    background: #FFF;
+    color: #63ADE5;
+    border: none;
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: -3px;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+}
+.dropdown-dot button:hover {
+   background-color: #EEE;
+}
+
+/** List Item Styles **/
+.dropdown-dot a {
+    display: block;
+    padding: 0.2em 0.8em;
+    text-decoration: none;
+    background: #FFF;
+    color: #333333;
+}
+
+/** List Item Hover Styles **/
+.dropdown-dot a:hover {
+    background: #BBBBBB;
+}
+.dropdown-menu > li > a {
+	padding: 6px 12px !important;
+}
+.project-menu {
+  margin-top: 30px;
+}
+
+.project-menu ul li {
+  border-bottom: 1px solid #fff;
+}
+
+.project-menu ul li:last-child {
+  border-bottom: none;
+}
+
+.project-menu ul li a {
+  color: #333;
+  font-weight: 400;
+  padding: 8px 10px;
+  line-height: 16px;
+}
+
+.project-menu ul li a i {
+  margin-right: 8px;
+ 
+}
+
+.project-menu ul li a:hover {
+  background-color: #fafcfd;
+  color:#000;
+}
+
+.project-menu ul li.active {
+  border-bottom: none;
+}
+
+.project-menu ul li.active a {
+  color: #0078D7;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+.line {
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+#myNavbar .nav > li {
+  float: left;
+}
+.nav > li > a {
+  padding: 13px 15px;
+  color: #000;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+  color: #000;
+}
+.nav .dropdown a {
+  padding: 5px 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu {
+  border:none;
+  border-radius: 0;
+  padding-bottom: 0;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: transparent;
+  border:none;
+}
+.notifics {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  background-color: #EFF5F5;
+}
+
+
+/*-------------------Team------------------------------------------team and team-----------------------------------------------------------------*/
+
+.panel {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 30px;
+}
+.panel-heading {
+  border-bottom: 1px solid #EEE;
+}
+.panel-body {
+  padding: 20px;
+}
+.hrbox {
+  background: #FDFBFC none repeat scroll 0 0;
+  height: 109px;
+  margin: 0 32px;
+  text-align: center;
+  padding-top: 28px
+}
+.hrbox .p-title {
+  font-size: 40px;
+  font-weight: bold;
+}
+.checkbox label:after, 
+.radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.table .checkbox {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.checkbox {
+  padding-left: 0;
+}
+.checkbox .cr,
+.radio .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    margin-top: 4px;
+    float: left;
+    margin-right: .5em;
+    padding-left: 0;
+    color: #0078D7;
+}
+.table .checkbox .cr {
+  margin-top: 0;
+}
+
+.radio .cr {
+    border-radius: 50%;
+}
+
+.checkbox .cr .cr-icon,
+.radio .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+}
+
+.radio .cr .cr-icon {
+    margin-left: 0.04em;
+}
+
+.checkbox label input[type="checkbox"],
+.radio label input[type="radio"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"] + .cr > .cr-icon,
+.radio label input[type="radio"] + .cr > .cr-icon {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+.radio label input[type="radio"]:checked + .cr > .cr-icon {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled + .cr,
+.radio label input[type="radio"]:disabled + .cr {
+    opacity: .5;
+}
+.project_folders {
+  padding-left: 10px;
+}
+.project_folders li {
+  list-style: none;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom:1px solid #EEE;
+
+}
+.project_folders a {
+  color: #333;
+  line-height: 
+}
+.project_folders a:hover {
+  color: #0078d7;
+}
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #0078d7 !important;
+}
+.login .panel {
+  width: 450px;
+  margin:50px auto 0;
+  padding: 20px;
+}
+
+.loader {
+   border: 10px solid #f3f3f3;
+    border-top: 10px solid #3498db;
+  border-bottom: 10px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    z-index: 2;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.overlay{
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000%;
+    background: rgba(101, 79, 88, 0.12);
+    z-index: 1;
+}
+
+/*-------------------Structure------------------------------------------Structure--------------------------------------------------------------------------------*/
