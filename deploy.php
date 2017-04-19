@@ -27,6 +27,12 @@ server('staging', 'dev.promarkup.co')
 // Tasks
 
 task('deploy:staging', function() {
+    writeln("user name");
+    writeln(getenv('gitusername'));
+    writeln("user password");
+    writeln(getenv('gitpassword'));
+    writeln("test");
+    writeln(getenv('test1'));
     $deployPath = get('deploy_path');
     cd($deployPath);
     writeln($deployPath);
